@@ -1,0 +1,18 @@
+[caller_settings] 
+config_name = "dna_r9.4.1_450bps_fast" 
+host = "127.0.0.1" 
+port = 5555 
+[conditions] 
+reference = "test.fa"
+[conditions.0] 
+name = "experence_name" 
+control = false 
+min_chunks = 0 
+max_chunks = inf 
+targets = "target.txt"
+single_on = "unblock" 
+multi_on = "unblock" 
+single_off = "stop_receiving" 
+multi_off = "stop_receiving" 
+no_seq = "proceed" 
+no_map = "proceed"
