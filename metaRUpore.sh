@@ -165,7 +165,7 @@ if [ ! -d $out ]; then
 else
 		echo "Warning: $out already exists. previous results are overwrited"
         rm -rf $out
-        mkdir -f $out
+        mkdir -p $out
 fi
 
 mv ${Input_fa2} ${out}

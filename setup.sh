@@ -39,7 +39,7 @@ echo "
 Building lastdb for Metaphlan2 markergene database"
 ${DIR}/bin/last-983/src/lastdb -Q 0 markers.lastindex markers.fasta -P 10
 $DIR/bin/fastaNameLengh.pl markers.fasta > markers.fasta.length
-rm -f markers.fasta.tar.xz
+
 
 
 
