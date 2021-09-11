@@ -107,6 +107,7 @@ rank<-c("kingdom","phylum","class","order","family","genus","species")
 colnames(cen2.v)<-c("readID",rank)
 cen2.nv<-cen2.nv[,c("readID",rank)]
 cen2<-rbind(cen2.nv,cen2.v)
+colnames(cen2)<-c("contig",rank)
 } else {
 rank<-c("kingdom","phylum","class","order","family","genus","species")
 cen2.nv<-cen2.nv[,c("readID",rank)]
