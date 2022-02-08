@@ -70,7 +70,7 @@ The taxonomy annotation algorithm of metaRUpore is the sampe with our ARGpore2 t
 ## *Citation:*
 
 If you use metaRUpore in your metagenome analysis please cite:
-
+to be filled
 
 ##### Tools included in metaRUpore should be also cited, these tools includes: 
 
