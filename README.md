@@ -36,10 +36,10 @@ First of all, the user should fill in the taxa names they intended to manually s
 
 This is how keep.csv looks like:
 
-|kingdom  |phylum|class|order|family|genus|species| 
-| --------| ---- |
-| Archaea |   your input   |
-| Virus  |   your input   |
+    |kingdom  |phylum|class|order|family|genus|species| 
+    | --------| ---- |
+    | Archaea |   your input   |
+    | Virus  |   your input   |
 
 
 **NOTICE:**
