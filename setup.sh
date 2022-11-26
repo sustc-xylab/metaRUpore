@@ -37,8 +37,11 @@ git lfs pull
 tar jxvf markers.fasta.tar.xz
 echo "
 Building lastdb for Metaphlan2 markergene database"
-${DIR}/bin/last-983/src/lastdb -Q 0 markers.lastindex markers.fasta -P 10
 $DIR/bin/fastaNameLengh.pl markers.fasta > markers.fasta.length
+# ${DIR}/bin/last-983/src/lastdb -Q 0 markers.lastindex markers.fasta -P 10
+
+${DIR}/bin/last-1418/bin/lastdb -Q 0 -P 10 -uRY4 markers.lastindex2 markers.fasta 
+
 
 
 

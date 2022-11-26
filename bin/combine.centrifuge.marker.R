@@ -116,7 +116,7 @@ cen2<-cen2.nv}
 colnames(cen2)<-c("contig",rank)
 # read in the 2D.fa last marker gene result #####
 taxa<-fread(args[5],header=F)
-colnames(taxa)<-c("query","subject","similarity","align.lenth","mismatch","gap","q.start","q.end","s.start","s.end","evalue","bitscore","s.len","q.len")
+colnames(taxa)<-c("query","subject","similarity","align.lenth","mismatch","gap","q.start","q.end","s.start","s.end","bitscore","s.len","q.len")
 load(args[6])
 
 # filtering hit based on similarity & alignment length of the marker gene length

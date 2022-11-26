@@ -55,10 +55,22 @@ Start markergene @ `date +"%Y-%m-%d %T"`"
 echo "
 Last $Query agaisnt MetaPhlan 2.0 markergene database with similarity cutoff $Simcutoff and alignment length cutoff 90% using $N_threads threads"
 
-${DIR}/bin/last-983/src/lastal -s 2 -T 0 -Q 0 -a 1 -b 1 -q 2 -P $N_threads -f BlastTab ${DIR}/database/markers.lastindex $Query > /tmp/argpore_${nowt}_${Query}_tmp.blast3
+# ${DIR}/bin/last-983/src/lastal -s 2 -T 0 -Q 0 -a 1 -b 1 -q 2 -P $N_threads -f BlastTab ${DIR}/database/markers.lastindex $Query > /tmp/argpore_${nowt}_${Query}_tmp.blast3
 
-echo "finish last agaisnt markergene database"
-echo "parsing markergene results"
+
+${DIR}/bin/last-1418/bin/last-train -P $N_threads -Q 0 ${DIR}/database/markers.lastindex2 $Query > ${out}/${Query}_train
+
+${DIR}/bin/last-1418/bin/lastal -P $N_threads --split -p ${out}/${Query}_train ${DIR}/database/markers.lastindex2 $Query > ${out}/${Query}.maf
+
+${DIR}/bin/last-1418/bin/maf-convert blasttab ${out}/${Query}.maf > /tmp/argpore_${nowt}_${Query}_tmp.blast3
+
+
+echo "finish last agaisnt markergene database
+
+"
+echo "parsing markergene results
+
+"
 grep -v "#" /tmp/argpore_${nowt}_${Query}_tmp.blast3 > /tmp/argpore_${nowt}_${Query}_tmp.blast3.modified
 
 ${DIR}/bin/BlastTab.addlen.sh \
@@ -69,7 +81,9 @@ ${DIR}/bin/BlastTab.addlen.sh \
 		${out}/${Query}_marker.last
 
 echo "
-Finish markergene @ `date +"%Y-%m-%d %T"`"
+Finish markergene @ `date +"%Y-%m-%d %T"`
+
+"
 
 ## merge taxonomy annotation by KRAKEN and MetaPhlan2.0 markergene ########
 echo "
