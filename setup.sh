@@ -25,8 +25,6 @@ rm -rf centrifuge
 mv centrifuge-1.0.3-beta centrifuge
 
 
-
-cd ${DIR}/database
 # MetaPhlan2.0 markergene database ##############################
 echo "
 Downloading Metaphlan2 markergene database from git lfs"
@@ -35,15 +33,14 @@ git lfs install
 git lfs pull
 
 tar jxvf markers.fasta.tar.xz
+
+cd ${DIR}/database
 echo "
 Building lastdb for Metaphlan2 markergene database"
 $DIR/bin/fastaNameLengh.pl markers.fasta > markers.fasta.length
 # ${DIR}/bin/last-983/src/lastdb -Q 0 markers.lastindex markers.fasta -P 10
 
 ${DIR}/bin/last-1418/bin/lastdb -Q 0 -P 10 -uRY4 markers.lastindex2 markers.fasta 
-
-
-
 
 
 ########### lineage database ###################################################################
