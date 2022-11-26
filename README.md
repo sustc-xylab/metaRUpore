@@ -36,7 +36,7 @@ First of all, the user should fill in the taxa names they intended to manually s
 
 This is how keep.csv looks like:
 
-|kingdom  | phylum | class | order | family | genus | species|
+| kingdom | phylum | class | order | family | genus | species|
 |:--------|:-------|:------|:------|:-------|:------|:-------|
 | Archaea |   your input   |
 | Virus  |   your input   |
@@ -67,7 +67,7 @@ Main output files include:
 
 The taxonomy annotation algorithm of metaRUpore is the sampe with our ARGpore2 tool (https://github.com/sustc-xylab/ARGpore2), in which taxonomic annotation is derived by combining results of a modified version of Centrifuge and MetaPhlan2 markergene database.
 
-### Further Info
+## Further Info
 
 *Citation:*
 
