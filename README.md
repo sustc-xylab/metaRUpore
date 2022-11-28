@@ -78,6 +78,10 @@ to be filled
 
 metaRUpore is distributed under the GNU General Public License, either version 3 of the License, or (at your option) any later version.
 
+*metaRUpore is brought you by:*
+
+[Yu Xia Google Profile](https://scholar.google.com/citations?hl=en&user=RKDFx6AAAAAJ&view_op=list_works&sortby=pubdate)
+
 ##### Tools included in metaRUpore should be also cited, these tools includes:
 
-Last, Centrifuge, MetaPhlan2, GNU parallel, R, python and relavent packages
+LAST, Centrifuge, MetaPhlan2, GNU parallel, R, python and relavent packages

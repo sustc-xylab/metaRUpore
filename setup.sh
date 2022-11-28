@@ -25,22 +25,38 @@ rm -rf centrifuge
 mv centrifuge-1.0.3-beta centrifuge
 
 
+########### LAST
+echo ""
+echo "Intalling LAST -------------------------------------------------------------------
+"
+wget https://gitlab.com/mcfrith/last/-/archive/1418/last-1418.tar.gz --output-document 'last-1418.tar.gz'
+tar -zxvf last-1418.tar.gz
+cd last-1418
+echo "
+compiling LAST with g++. This gonna take a while ---------------------------------------
+"
+make
+
+
 # MetaPhlan2.0 markergene database ##############################
+cd ${DIR}
 echo "
 Downloading Metaphlan2 markergene database from git lfs"
 
 git lfs install
 git lfs pull
 
-tar jxvf markers.fasta.tar.xz
-
 cd ${DIR}/database
+tar jxvf markers.fasta.tar.xz
+mv database/markers.fasta .
+rm -rf database
+
 echo "
 Building lastdb for Metaphlan2 markergene database"
 $DIR/bin/fastaNameLengh.pl markers.fasta > markers.fasta.length
 # ${DIR}/bin/last-983/src/lastdb -Q 0 markers.lastindex markers.fasta -P 10
 
-${DIR}/bin/last-1418/bin/lastdb -Q 0 -P 10 -uRY4 markers.lastindex2 markers.fasta 
+${DIR}/bin/last-1418/bin/lastdb -Q 0 -P 10 -uRY4 markers.lastindex2 markers.fasta
 
 
 ########### lineage database ###################################################################
@@ -48,7 +64,7 @@ echo "
 Downloading lineage information for NCBI taxonomy"
 
 tar jxvf 2020-06-16_lineage.tab.tar.xz
-mv database/2020-06-16_lineage.tab . 
+mv database/2020-06-16_lineage.tab .
 rm -rf database
 
 
