@@ -38,10 +38,11 @@ compiling LAST with g++. This gonna take a while -------------------------------
 make
 
 
-# MetaPhlan2.0 markergene database ##############################
+############## MetaPhlan2.0 markergene database
 cd ${DIR}
 echo "
-Downloading Metaphlan2 markergene database from git lfs"
+Downloading Metaphlan2 markergene database from git lfs ---------------------------
+"
 
 git lfs install
 git lfs pull
@@ -52,16 +53,18 @@ mv database/markers.fasta .
 rm -rf database
 
 echo "
-Building lastdb for Metaphlan2 markergene database"
+Building lastdb for Metaphlan2 markergene database ------------------------------
+"
 $DIR/bin/fastaNameLengh.pl markers.fasta > markers.fasta.length
 # ${DIR}/bin/last-983/src/lastdb -Q 0 markers.lastindex markers.fasta -P 10
 
 ${DIR}/bin/last-1418/bin/lastdb -Q 0 -P 10 -uRY4 markers.lastindex2 markers.fasta
 
 
-########### lineage database ###################################################################
+########### lineage database
 echo "
-Downloading lineage information for NCBI taxonomy"
+Downloading lineage information for NCBI taxonomy ---------------------
+"
 
 tar jxvf 2020-06-16_lineage.tab.tar.xz
 mv database/2020-06-16_lineage.tab .
@@ -69,14 +72,18 @@ rm -rf database
 
 
 
-######### centrifuge database #################################
+######### centrifuge database 
 echo "
-Downloading Centrifuge database"
+Downloading Centrifuge database. This will take for a while -------------------------
+"
 wget https://genome-idx.s3.amazonaws.com/centrifuge/p_compressed%2Bh%2Bv.tar.gz --output-document 'p+b+v.tar.gz'
 tar -zvxf p+b+v.tar.gz
 rm p+b+v.tar.gz
 
 
 echo "Finish Download required databases
-------------------------------------------------------------------"
-echo "Done metaRUpore setup"
+------------------------------------------------------------------
+"
+echo "
+Done metaRUpore setup
+"
