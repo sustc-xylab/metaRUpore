@@ -107,7 +107,7 @@ Input_fa2=${Input_fa2}.uniq
 $DIR/bin/fastaNameLengh.pl ${Input_fa2} | grep -v "#" > ${Input_fa2}.l
 
 echo "----------------------------------------------------------------------
-start metaRUpore @ `date +"%Y-%m-%d %T"`
+Start metaRUpore @ `date +"%Y-%m-%d %T"`
 "
 
 echo "metaRUpore is runing using parameters:
@@ -177,5 +177,5 @@ mv ${Input_fa2}_taxa.tab_unclassified.ratio.tab ${out}
 
 echo "
 --------------------------------------------------------------------------------
-Finish metaRUpore @ `date +"%Y-%m-%d %T"`
+Done metaRUpore @ `date +"%Y-%m-%d %T"`
 "
